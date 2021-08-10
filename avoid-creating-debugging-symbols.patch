@@ -1,0 +1,20 @@
+diff --git a/src/controller/Makefile_linux b/src/controller/Makefile_linux
+index d374347..da85ce1 100644
+--- a/src/controller/Makefile_linux
++++ b/src/controller/Makefile_linux
+@@ -64,7 +64,7 @@ RELS = $(EXTRASRCS:.c=.rel)
+ 
+ INCLUDES = -I$(IDIR) -I$(IDIR1) -I. -I../
+ CFLAGS = -m$(PLATFORM) -Ddouble=float --std-c99 --nolospre
+-ELF_FLAGS = --out-fmt-elf --debug
++ELF_FLAGS = --out-fmt-elf
+ LIBS = 
+ 
+ # This just provides the conventional target name "all"; it is optional
+@@ -130,4 +130,4 @@ clean:
+ 	@rm -rf main.bin
+ 	@rm -rf *.ihx
+ 	@rm -rf *.hex
+-	@echo "Done."
+\ No newline at end of file
++	@echo "Done."
