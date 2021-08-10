@@ -1,0 +1,13 @@
+Index: sdcc/src/stm8/peep.c
+===================================================================
+--- sdcc/src/stm8/peep.c	(revision 12608)
++++ sdcc/src/stm8/peep.c	(working copy)
+@@ -827,7 +827,7 @@
+ 
+       if (ISINST (pl->line, "ld") || ISINST (pl->line, "ldw"))
+         {
+-          char buf[64], *p;
++          char buf[128], *p;
+           strcpy (buf, pl->line);
+           if (!!(p = strstr (buf, "0x")) || !!(p = strstr (buf, "0X")))
+             p[0] = p[1] = ' ';
