@@ -2,6 +2,7 @@
 , fetchFromGitHub
 , sdcc
 , enableDebugging
+, stm8-binutils
 }:
 
 stdenv.mkDerivation rec {
@@ -21,6 +22,7 @@ stdenv.mkDerivation rec {
   ];
 
   nativeBuildInputs = [
+    stm8-binutils
     (sdcc.overrideAttrs(old: {
       patches = [
         # https://sourceforge.net/p/sdcc/patches/397/
@@ -28,5 +30,12 @@ stdenv.mkDerivation rec {
       ];
     }))
   ];
+
   makeFlags = [ "-C" "src/controller" "-f" "Makefile_linux" ];
+
+  installTargets = [ "hex" ];
+  postInstall = ''
+    mkdir -p $out
+    cp src/controller/main.ihx $out
+  '';
 }
