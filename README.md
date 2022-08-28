@@ -17,7 +17,13 @@ the 'nix store' between your builds and your system.
 
 ## Status
 
-Incomplete, see https://github.com/raboof/nix-TSDZ2-Smart-EBike-1/issues
+Seems to be working, but haven't tested the resulting executable yet.
+
+No debugging symbols because of a relocation issue
+(https://github.com/raboof/nix-TSDZ2-Smart-EBike-1/issues/5)
+
+Perhaps we should upstream the packaging of the stm8-binutils into nixpkgs?
+(https://github.com/raboof/nix-TSDZ2-Smart-EBike-1/issues/4)
 
 ## Usage
 

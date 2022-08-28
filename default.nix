@@ -26,7 +26,9 @@ stdenv.mkDerivation rec {
     (sdcc.overrideAttrs(old: {
       patches = [
         # https://sourceforge.net/p/sdcc/patches/397/
-        ./sdcc-stm8-large-variable-names.patch
+        # no longer needed since a variation of this patch made
+        # it into sdcc 4.2.0 which is now in nixos-unstable
+        #./sdcc-stm8-large-variable-names.patch
       ];
     }))
   ];
